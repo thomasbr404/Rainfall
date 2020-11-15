@@ -11,24 +11,27 @@ local mainVolumeSlider, musicVolumeSlider, effectsVolumeSlider
 
 function Options:load()
   changedResolution = false
-  backButton = newButton(gw * 0.54, gh / 2 + 375, gw * 0.1, 50, 15, "Back", Blue, White, White, "center", 0, 10, function() BackToStartScreen() end)
-  generalButton = newButton(gw * 0.38, gh / 2 - 375, gw * 0.1, 50, 15, "General", Purple, White, White, "center", 0, 10)
-  volumeButton = newButton(gw * 0.38, gh / 2, gw * 0.1, 50, 15, "Volume", Purple, White, White, "center", 0, 10)
-  mainButton = newButton(gw * 0.35, gh / 2 + 75, gw * 0.3, 50, 15, "Main", GrayOpacity4, White, White, "left", 15, 10)
-  musicButton = newButton(gw * 0.35, gh * 0.5 + 150, gw * 0.3, 50, 15, "Music", GrayOpacity4, White, White, "left", 15, 10)
-  effectButton = newButton(gw * 0.35, gh / 2 + 225, gw * 0.3, 50, 15, "Effect", GrayOpacity4, White, White, "left", 15, 10)
-  slidertickButton = newButton(gw * 0.35, gh / 2 + 300, gw * 0.3, 50, 15, "Enable slidertick sound", GrayOpacity4, White, White, "left", 15, 10)
+  backButton = newButton(gw * 0.54, gh / 2 + 450, gw * 0.1, 50, 15, "Back", Blue, White, White, "center", 0, 10, function() BackToStartScreen() end)
+  generalButton = newButton(gw * 0.38, gh / 2 - 450, gw * 0.1, 50, 15, "General", Purple, White, White, "center", 0, 10)
+  volumeButton = newButton(gw * 0.38, gh / 2 - 75, gw * 0.1, 50, 15, "Volume", Purple, White, White, "center", 0, 10)
+  keybindButton = newButton(gw * 0.38, gh / 2 + 300, gw * 0.1, 50, 15, "Keybinds", Purple, White, White, "center", 0, 10)
+  mainButton = newButton(gw * 0.35, gh / 2 + 0, gw * 0.3, 50, 15, "Main", GrayOpacity4, White, White, "left", 15, 10)
+  musicButton = newButton(gw * 0.35, gh * 0.5 + 75, gw * 0.3, 50, 15, "Music", GrayOpacity4, White, White, "left", 15, 10)
+  effectButton = newButton(gw * 0.35, gh / 2 + 150, gw * 0.3, 50, 15, "Effect", GrayOpacity4, White, White, "left", 15, 10)
+  slidertickButton = newButton(gw * 0.35, gh / 2 + 225, gw * 0.3, 50, 15, "Enable slidertick sound", GrayOpacity4, White, White, "left", 15, 10)
   
-  resolutionButton = newButton(gw * 0.35, gh / 2 - 300, gw * 0.3, 50, 15, "Resolution", GrayOpacity4, White, White, "left", 15, 10)
-  vsyncButton = newButton(gw * 0.35, gh / 2 - 225, gw * 0.3, 50, 15, "Enable Vsync", GrayOpacity4, White, White, "left", 15, 10)
-  fpsButton = newButton(gw * 0.35, gh / 2 - 150, gw * 0.3, 50, 15, "Show FPS", GrayOpacity4, White, White, "left", 15, 10)
-  backroundDimButton = newButton(gw * 0.35, gh / 2 - 75, gw * 0.3, 50, 15, "Background dim", GrayOpacity4, White, White, "left", 15, 10)
+  resolutionButton = newButton(gw * 0.35, gh / 2 - 375, gw * 0.3, 50, 15, "Resolution", GrayOpacity4, White, White, "left", 15, 10)
+  vsyncButton = newButton(gw * 0.35, gh / 2 - 300, gw * 0.3, 50, 15, "Enable Vsync", GrayOpacity4, White, White, "left", 15, 10)
+  fpsButton = newButton(gw * 0.35, gh / 2 - 225, gw * 0.3, 50, 15, "Show FPS", GrayOpacity4, White, White, "left", 15, 10)
+  backroundDimButton = newButton(gw * 0.35, gh / 2 - 150, gw * 0.3, 50, 15, "Background dim", GrayOpacity4, White, White, "left", 15, 10)
 
-  backgroundDimSlider = newSlider(gw * 0.56, gh / 2 - 50, gw * 0.15, saveManager.settings.bgDim, 0, 1, function (v) gameManager.setBackgroundDim(v) end)
+  backgroundDimSlider = newSlider(gw * 0.56, gh / 2 - 125, gw * 0.15, saveManager.settings.bgDim, 0, 1, function (v) gameManager.setBackgroundDim(v) end)
   
-  mainVolumeSlider = newSlider(gw * 0.56, gh / 2 + 100, gw * 0.15, saveManager.settings.mainVolume, 0, 2, function (v) soundManager:SetMainVolume(v) end)
-  musicVolumeSlider = newSlider(gw * 0.56, gh / 2 + 175, gw * 0.15, saveManager.settings.musicVolume, 0, 0.1, function (v) soundManager:SetMusicVolume(v) end)
-  effectsVolumeSlider = newSlider(gw * 0.56, gh / 2 + 250, gw * 0.15, saveManager.settings.effectVolume, 0, 0.1, function (v) soundManager:SetEffectsVolume(v) end)
+  mainVolumeSlider = newSlider(gw * 0.56, gh / 2 + 25, gw * 0.15, saveManager.settings.mainVolume, 0, 2, function (v) soundManager:SetMainVolume(v) end)
+  musicVolumeSlider = newSlider(gw * 0.56, gh / 2 + 100, gw * 0.15, saveManager.settings.musicVolume, 0, 0.1, function (v) soundManager:SetMusicVolume(v) end)
+  effectsVolumeSlider = newSlider(gw * 0.56, gh / 2 + 175, gw * 0.15, saveManager.settings.effectVolume, 0, 0.1, function (v) soundManager:SetEffectsVolume(v) end)
+  
+  keybindSetBox = newButton(gw * 0.35, gh / 2 + 375, gw * 0.3, 50, 15, "Set Keybinds", GrayOpacity4, White, White, "left", 15, 10)
 end
 
 function Options:update(dt)
@@ -39,22 +42,36 @@ function Options:update(dt)
   effectsVolumeSlider:update()
                 
   isMouseOnResolution = mx > gw * 0.51 and mx < gw * 0.51 + 200 and
-                          my > gh / 2 - 290 and my < gh / 2 - 290 + 30  
+                          my > gh / 2 - 365 and my < gh / 2 - 365 + 30  
                       
   isMouseOnEnableVSync = mx > gw * 0.63 - 16 and mx < gw * 0.63 + 16 and
-                          my > gh / 2 - 200 - 16 and my < gh / 2 - 200 + 16   
+                          my > gh / 2 - 275 - 16 and my < gh / 2 - 275 + 16   
                           
   isMouseOnEnableFPS = mx > gw * 0.63 - 16 and mx < gw * 0.63 + 16 and
-                          my > gh / 2 - 125 - 16 and my < gh / 2 - 125 + 16   
+                          my > gh / 2 - 200 - 16 and my < gh / 2 - 200 + 16   
                           
   isMouseOnEnableTicksound = mx > gw * 0.63 - 16 and mx < gw * 0.63 + 16 and
-                          my > gh / 2 + 325 - 16 and my < gh / 2 + 325 + 16   
+                          my > gh / 2 + 250 - 16 and my < gh / 2 + 250 + 16   
                                                             
 end
 
 function Options:draw()
   DrawButtons()
   DrawSliders()
+end
+
+function love.wheelmoved(x, y)
+    if y > 0 then
+        scrollY = scrollY + 30
+        if (scrollY >= 0) then
+          scrollY = 0
+        end
+    elseif y < 0 then
+        scrollY = scrollY - 30
+        if (scrollY <= 890 - 111) then
+          scrollY = 890 - 111
+        end
+    end
 end
 
 function Options:mousepressed(x, y,button)     
@@ -120,25 +137,27 @@ function DrawButtons()
   generalButton:draw()  
   resolutionButton:draw()
   love.graphics.setColor(Green)
-  love.graphics.rectangle("fill", gw * 0.51, gh / 2 - 290, 200, 30, 10)
+  love.graphics.rectangle("fill", gw * 0.51, gh / 2 - 365, 200, 30, 10)
   love.graphics.setColor(White)
   love.graphics.setLineWidth(5)
-  love.graphics.rectangle("line", gw * 0.51, gh / 2 - 290, 200, 30, 10)
-  love.graphics.printf(resolutionList[saveManager.settings.resolutionIndex][1] .. " x " .. resolutionList[saveManager.settings.resolutionIndex][2], gw * 0.51, gh / 2 - 290, 200, "center")
+  love.graphics.rectangle("line", gw * 0.51, gh / 2 - 365, 200, 30, 10)
+  love.graphics.printf(resolutionList[saveManager.settings.resolutionIndex][1] .. " x " .. resolutionList[saveManager.settings.resolutionIndex][2], gw * 0.51, gh / 2 - 365, 200, "center")
   
   vsyncButton:draw()
-  love.graphics.circle('line', gw * 0.63, gh / 2 - 200, 16, 4)
+  love.graphics.circle('line', gw * 0.63, gh / 2 - 275, 16, 4)
   if saveManager.settings.isEnabledVSync then
     love.graphics.setColor(Green)
-    love.graphics.circle('fill', gw * 0.63, gh / 2 - 200, 8, 4)
+    love.graphics.circle('fill', gw * 0.63, gh / 2 - 275, 8, 4)
   end
       
   fpsButton:draw()
-  love.graphics.circle('line', gw * 0.63, gh / 2 - 125, 16, 4)
+  love.graphics.circle('line', gw * 0.63, gh / 2 - 200, 16, 4)
   if saveManager.settings.isEnabledFPS then
     love.graphics.setColor(Green)
-    love.graphics.circle('fill', gw * 0.63, gh / 2 - 125, 8, 4)
+    love.graphics.circle('fill', gw * 0.63, gh / 2 - 200, 8, 4)
   end
+  
+  
   
   backroundDimButton:draw()
   volumeButton:draw()
@@ -146,14 +165,17 @@ function DrawButtons()
   musicButton:draw()
   effectButton:draw()
   slidertickButton:draw()
-  love.graphics.circle('line', gw * 0.63, gh / 2 + 325, 16, 4)
+  love.graphics.circle('line', gw * 0.63, gh / 2 + 250, 16, 4)
   if saveManager.settings.isEnabledTicksound then
     love.graphics.setColor(Green)
-    love.graphics.circle('fill', gw * 0.63, gh / 2 + 325, 8, 4)
+    love.graphics.circle('fill', gw * 0.63, gh / 2 + 250, 8, 4)
     love.graphics.setColor(1, 1, 1, 1)
   end
+  
+  keybindButton:draw()
+  keybindSetBox:draw()
   --[[
-  love.graphics.setColor(Colors.getGreenColor())
+  love.graphics.setColor(Green)
   love.graphics.rectangle('fill', gw * 0.35, gh / 2 - 75, gw * 0.3, 50, 15)
   love.graphics.setColor(1, 1, 1, 1)
   love.graphics.rectangle('line', gw * 0.35, gh / 2 - 75, gw * 0.3, 50, 15)

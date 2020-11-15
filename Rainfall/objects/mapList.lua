@@ -78,6 +78,7 @@ function DrawGrade(i)
   love.graphics.printf(saveManager.highscores.mapGrade[i], gw * 0.61, scrollY + 116 + 111 * (i - 1), gw * 0.6, "center") 
 end
 
+
 function mapList:mousepressed(x, y, button)  
   for i, v in ipairs(maplist) do
     isMouseOnMap = mx > gw - 820 and mx < gw - 820 + 700 and

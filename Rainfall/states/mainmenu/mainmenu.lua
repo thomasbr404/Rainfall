@@ -5,11 +5,9 @@ require 'objects/squareButton'
 
 Mainmenu = {}
 
-
-
 local scaleX, scaleY
 
-local noButton, yesButton, eityButton, playButton, optionsButton, exitButton
+local noButton, yesButton, rainfallButton, playButton, optionsButton, exitButton
 
 function Mainmenu:load()
   Songselect:load()
@@ -24,7 +22,7 @@ function Mainmenu:load()
   
   noButton = newSquareButton(gw / 2 - 150, gh / 2 + 200, 75, "No", Red, White, 0, -25, function() PressedQuit = false end)
   yesButton = newSquareButton(gw / 2 + 150, gh / 2 + 200, 75, "Yes", Blue, White, 0, -25, function() love.event.quit() end)
-  eityButton = newSquareButton(gw / 2 - 270, gh / 2, 250, "Rainfall", Blue, White, 0, -75)
+  rainfallButton = newSquareButton(gw / 2 - 270, gh / 2, 250, "Rainfall", Blue, White, 0, -75)
   playButton = newSquareButton(gw / 2 + 50, gh / 2 - 200, 120, "Play", Green, White, 0, -25, function() menustate = "Songselect" psystem:reset() end)
   optionsButton = newSquareButton(gw / 2 + 250, gh / 2, 120, "Options", Purple, White, 0, -25, function() menustate = "Options" end)
   exitButton = newSquareButton(gw / 2 + 50, gh / 2 + 200, 120, "Exit", Red, White, 0, -25, function() PressedQuit = true end)
@@ -163,7 +161,7 @@ end
 function DrawMainButtons()    
   love.graphics.setLineWidth(90)
   love.graphics.setFont(squareButtonBigFont)
-  eityButton:draw()
+  rainfallButton:draw()
   love.graphics.setLineWidth(60)
   love.graphics.setFont(squareButtonsmallFont)
   playButton:draw()

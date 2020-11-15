@@ -34,9 +34,11 @@ function saveManager:load()
   saveManager.highscores = chunk()
 end
 
+
 function saveManager:saveHighscore()
   love.filesystem.write("highscores.txt", serialize(saveManager.highscores))
 end
+
 
 function saveManager:saveSettings()
   settings = {}
